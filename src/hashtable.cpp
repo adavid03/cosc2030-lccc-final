@@ -70,3 +70,15 @@ void HashTable::remove(const std::string& key) {
         current = current->next;
     }
 } // <- Removes a video from the table
+
+std::vector<Video*> HashTable::getAll() const {
+    std::vector<Video*> allVideos;
+    for (int i = 0; i < capacity; ++i) {
+        Node* current = table[i];
+        while (current != nullptr) {
+            allVideos.push_back(current->videoPtr);
+            current = current->next;
+        }
+    }
+    return allVideos;
+}

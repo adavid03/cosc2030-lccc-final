@@ -28,4 +28,5 @@ public:
     void insert(const std::string& key, Video* video); // <- A function that inserts a video into the table
     Video* get(const std::string& key) const; // <- A function that returns a video from the table
     void remove(const std::string& key); // <- A function that removes a video from the table
+    std::vector<Video*> getAll() const; // <- Gets all the videos for the getAll function in VideoStore
 };
